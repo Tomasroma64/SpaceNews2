@@ -1,13 +1,6 @@
 import React, { useEffect, useState } from "react";
-import {
-  ActivityIndicator,
-  FlatList,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
+import { ActivityIndicator, FlatList, StyleSheet, View } from "react-native";
 
-import Title from "./Title";
 import CardFeed from "./CardFeed";
 
 const Feed = () => {
@@ -33,32 +26,18 @@ const Feed = () => {
           data={data}
           keyExtractor={({ id }, index) => id}
           renderItem={({ item }) => <CardFeed data={item}></CardFeed>}
-          ListHeaderComponent={() => <Title></Title>}
         ></FlatList>
       )}
     </View>
   );
 };
-export default Feed;
 
-/*
-  
-    render() {
-    return (
-      <>
-        <FlatList
-          data={[{ title: "aksdfj" }, { title: "asjdl" }]}
-          keyExtractor={(x, i) => i}
-          renderItem={({ item }) => <Text>{item.title}</Text>}
-        ></FlatList>
-      </>
-    );
-  }
-  */
+export default Feed;
 
 const s = StyleSheet.create({
   content: {
-    flex: 0.95,
+    flex: 1,
     padding: 17,
+    paddingBottom: 0,
   },
 });
